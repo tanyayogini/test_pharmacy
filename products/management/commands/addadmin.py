@@ -9,6 +9,7 @@ class Command(BaseCommand):
         super().__init__(*args, **kwargs)
 
     def handle(self, *args, **options):
+        """Создает суперпользователя с данными, указанными в файле .env, если он еще не создан"""
         username = os.getenv('ADMIN_USER')
         password = os.getenv('ADMIN_PASSWORD')
         email = ''

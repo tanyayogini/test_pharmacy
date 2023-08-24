@@ -1,8 +1,8 @@
 import json
 
 
-
 def convert(filename, model, ready_filename):
+    """Функция конвертирует json в файл со структурой, подходящий для загрузки в базу данных"""
     with open(filename, 'r', encoding='utf-8') as file:
         data = json.load(file)
 

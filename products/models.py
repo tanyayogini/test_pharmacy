@@ -34,7 +34,6 @@ class ProductClient(models.Model):
         verbose_name_plural = 'Пользовательские товары'
 
 
-
 class Distribution(models.Model):
     product = models.OneToOneField(Product, on_delete=models.CASCADE, verbose_name='Товар', blank=True)
 
@@ -44,7 +43,6 @@ class Distribution(models.Model):
     class Meta:
         verbose_name = 'Стыковка товаров'
         verbose_name_plural = 'Стыковка товаров'
-
 
     @admin.display(description='Пользовательские названия')
     def names(self):

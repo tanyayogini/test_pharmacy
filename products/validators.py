@@ -2,6 +2,7 @@ from django.core.exceptions import ValidationError
 
 
 def validate_ean13(value):
+    """Проверяет корректность введения ean13. Использован алгоритм расчет контрольной суммы"""
     try:
         digit_list = list(map(int, value))
     except ValueError:
