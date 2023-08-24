@@ -3,9 +3,15 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+from products.validators import validate_ean13
+
 
 class Product(models.Model):
-    ean13 = models.CharField(primary_key=True, max_length=255, verbose_name='Штрих-код')
+    ean13 = models.CharField(
+        primary_key=True,
+        max_length=255,
+        validators=[validate_ean13],
+        verbose_name='Штрих-код')
     name_prep = models.CharField(max_length=255, verbose_name='Наименование товара')
 
     def __str__(self):
