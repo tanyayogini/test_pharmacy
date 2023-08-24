@@ -43,7 +43,7 @@ class Distribution(models.Model):
     @admin.display(description='Пользовательские названия')
     def names(self):
         self.names = self.product.names.all()
-        return list(client_name for client_name in self.names)
+        return list(client_name.name_prep for client_name in self.names)
 
     @admin.display(description='Количество записей клиентов')
     def count_names(self):
