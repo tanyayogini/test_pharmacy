@@ -33,7 +33,7 @@ services:
       DB_HOST: db
     depends_on:
       migrations:
-        condition: service_completed_successfull
+        condition: service_completed_successfully
     command:
       - python manage.py loaddata fixtures/tovar_ready.json
       - python manage.py loaddata fixtures/tovar_client_ready.json
