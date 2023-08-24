@@ -8,6 +8,9 @@ def validate_ean13(value):
     except ValueError:
         raise ValidationError('Некорректный код ean13')
 
+    if len(digit_list) != 13:
+        raise ValidationError('Некорректный код ean13')
+
     last_digit = digit_list.pop()
     summa = 0
     for index, digit in enumerate(digit_list):
